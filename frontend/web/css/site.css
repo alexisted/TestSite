@@ -2,7 +2,16 @@ html,
 body {
     height: 100%;
 }
-
+.red{
+    background: red;
+    border-color: red;
+    color: white;
+}
+.blue{
+    background: cornflowerblue;
+    border-color: cornflowerblue;
+    color: white;
+}
 .wrap {
     min-height: 100%;
     height: auto;

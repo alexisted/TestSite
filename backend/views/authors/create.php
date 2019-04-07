@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$this->title = 'Добавить автора';
 ?>
 <h1>Добавить автора:</h1>
 

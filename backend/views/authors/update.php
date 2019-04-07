@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$this->title = 'Изменить автора';
 ?>
     <h1>Изменить автора №<?=$model->id;?></h1>
 

@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$this->title = 'Изменить название книги';
 ?>
     <h1>Изменить название книги №<?=$model->id;?></h1>
 
