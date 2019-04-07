@@ -6,18 +6,28 @@ namespace backend\controllers;
 use Yii;
 use common\models\Books;
 use common\models\Authors;
+use yii\data\Pagination;
 use yii\web\Controller;
 
 
 class BooksController extends Controller
 {
-    public function actionIndex(){
+    public function actionIndex()
+    {
+        $query = Books::find();
 
-        $booksList = Books::find()->all();
+
+        $page = new Pagination([
+            'defaultPageSize' => 10,
+            'totalCount' => $query->count(),
+        ]);
+        $booksList = $query->orderBy('id')->offset($page->offset)->limit($page->limit)->all();
 
         return $this->render('index', [
             'booksList' => $booksList,
+            'page' => $page,
         ]);
+
     }
 
     public function actionCreate(){

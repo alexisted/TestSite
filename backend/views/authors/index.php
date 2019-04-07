@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 ?>
 
@@ -35,3 +36,5 @@ use yii\helpers\Url;
 <?php endforeach;?>
 
 </table>
+
+<?= LinkPager::widget(['pagination' => $page ])?>

@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Authors;
+use yii\data\Pagination;
 use yii\web\Controller;
 
 
@@ -11,10 +12,18 @@ class AuthorsController extends Controller
 {
     public function actionIndex(){
 
-        $authorsList = Authors::find()->all();
+        $query = Authors::find();
+
+
+        $page = new Pagination([
+            'defaultPageSize' => 10,
+            'totalCount' => $query->count(),
+        ]);
+        $authorsList = $query->orderBy('id')->offset($page->offset)->limit($page->limit)->all();
 
         return $this->render('index', [
             'authorsList' => $authorsList,
+            'page' => $page,
         ]);
     }
 
